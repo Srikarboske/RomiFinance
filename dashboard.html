@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROMI</title>
+    <link rel="icon" type="image/x-icon" href="D:\PixelBridges Assignment\Icons\New Logo.png">
+    <link rel="stylesheet" href="CSSJS/css/bootstrap.min.css">
+    <script src="CSSJS/js/bootstrap.bundle.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+
+    
+    <script src="jquery-3.6.1.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <style>
+      .popover {
+    border: 2px solid black;
+  }
+  .popover-title {
+     color: aliceblue;
+    font-size: 28px;
+    text-align:center;
+  }
+  .popover-content {
+    color:aliceblue;
+    padding: 25px;
+  }
+  thead,td,tr{
+    color: aliceblue;
+  }
+ 
+    </style>
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();   
+      });
+      </script>
+</head>
+<body> 
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="logo" src="Icons\New Logo.png">
+              <span id="brand" >Romi Finance</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="navbar" class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="navitems" class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="navitems" aria-current="page" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown" id="navitems" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-trigger="hover">
+                  NFT
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a id="dropdown" class="dropdown-item"  href="#">Mint</a></li>
+                  <li><a id="dropdown" class="dropdown-item"   href="#">Stake NFT</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="navitems" aria-current="page" href="earn.html">Earn</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="navitems" aria-current="page" href="buy.html">Buy</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="navitems" aria-current="page" href="referral.html">Referrals</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="navitems" aria-current="page" href="ecosystem.html">Ecosystem</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="navitems" aria-current="page" href="https://docs.zomi.finance/">About</a>
+              </li>
+              <li class="nav-item" id="trade">
+                  <button type="button" class="btn btn-success" >Trade</button>
+              </li>
+              <li  class="nav-item" id="wallet-button">
+                  <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#connect"><img id="wallet" src="Icons\wallet.png"><span style="padding-left: 15px;">Connect Wallet</span></button>
+              </li>
+             <li class="nav-item dropdown" id="last">
+             <button class="btn btn-outline-light nav-link dropdown" data-bs-toggle="dropdown">
+              <img src="Icons\ethereum.png" id="ether"> |
+              <span><img src="Icons\more.png" id="more"></span>
+             </button>
+             <ul class="dropdown-menu">
+              <li class="dropdown-header">Networks</li>
+              <a class="dropdown-item">Ether</a>
+              <div class="dropdown-divider"></div>
+        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#mymodal" href="#">Setting</a>
+        <a class="dropdown-item" href="#">Language</a>
+      </div>
+      <div id="mymodal" class="modal">
+      <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+      <h3 class="modal-title">Setting</h3>
+      <button type="button"
+      class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+          <form>
+          <div class="form-group">
+              <label for="exampleFormControlTextarea1">Allowed Slippage</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                  Display PnL after fees
+               </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                  Include PnL in leverage display
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                  Disable order validation
+              </label>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-success btn-lg btn-block" href="#">save</button>
+      </div>
+      </div>
+      </div>
+      </div>
+             </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container mt-4">
+        <h1 style="color: aliceblue; float: left;">Status</h1>
+        <span><img src="Icons\ethereum.png" alt="ether" height="50px"></span>
+        <div class="container" style="float: left;">
+            <p style="color: aliceblue;">Ethereum Total Stats start from 06 Jan 2022.</p> 
+            <p style="color: aliceblue;">For detailed stats:</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card bg-dark">
+                    <div class="card-header bg-dark" style="color: aliceblue;">
+                        Overview
+                      </div>
+                      <ul class="list-group list-group-flush bg-dark">
+                        <li class="list-group-item bg-dark" style="color: aliceblue;" >AUM <span style="float:right;"><u data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Assets under management :$ROMI Stake" data-bs-placement="left">$32</u></span></li>
+                        <li class="list-group-item bg-dark" style="color: aliceblue;">$ZLP Pool<span style="float:right;"><u data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Total value of Token is $ZLP pool" data-bs-placement="left">$32</u></span> </li>
+                        <li class="list-group-item bg-dark" style="color: aliceblue;">24h Volume<span style="float:right;"><u>$0</u></span></li>
+                        <li class="list-group-item bg-dark" style="color: aliceblue;">Long Positions<span style="float:right;"><u>$0</u></span></li>
+                        <li class="list-group-item bg-dark" style="color: aliceblue;">Short Positions<span style="float:right;"><u>$0</u></span></li>
+
+                      </ul>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card bg-dark">
+                    <div class="card-header bg-dark" style="color: aliceblue;">
+                        Total Status
+                      </div>
+                      <ul class="list-group list-group-flush bg-dark">
+                        <li class="list-group-item bg-dark" style="color: aliceblue;" >Total Fee <span style="float:right;"><u data-toggle="popover" title="On Ethereum : $0" data-bs-trigger="hover" data-bs-content="total cost : $0" data-bs-placement="left"
+                          >$0</u></span></li>
+                        <li class="list-group-item bg-dark" style="color: aliceblue;">Total Volume<span style="float:right;"><u data-toggle="popover" title="Total Volume : $0" data-bs-trigger="hover" data-bs-placement="left" >$0</u></span> </li>
+                        <li class="list-group-item bg-dark" style="color: aliceblue;">Floor Price Fund<span style="float:right;"><u>
+                            $626,015</u></span></li>
+                        <li></li>
+                        <li><span></span></li>
+                        <li>
+                            <span></span>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="container mt-4">
+        <h1 style="color: aliceblue; float: left;">Tokens</h1>
+        <span><img src="Icons\ethereum.png" alt="ether" height="50px"></span>
+        <div class="container" style="float: left;">
+            <p style="color: aliceblue;">Platform and $ZLP index tokens.</p> 
+        </div>
+      </div>
+     <div class="container mt-2">
+      <div class="row">
+        <div class="col-6">
+          <div class="card bg-dark">
+            <div class="card-body">
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card bg-dark">
+            <div class="card-body">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+     </div>
+      <div class="container mt-5">
+        <table class="table" style="border: rgb(25, 34, 34)">
+            <thead>
+                <tr>
+                    <th>$ZLP Index Composition<span><img src="Icons\ethereum.png" height="30px" width="30px"></span></th>
+                    <th>Token</th>
+                    <th>Pool</th>
+                    <th></th>
+                    <th>Weight</th>
+                    <th>Utilization</th>
+                </tr>
+            </thead>
+                <tbody>
+                <tr>
+                <td><img src="Icons\ethereum.png" alt="#" height="30px" width="30px"><span style="font-size: xx-large;" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" id="drop" aria-expanded="false">Ethereum</span>
+                  <span><h6 style="padding-left: 30px;">ETH</h6></span>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://www.coingecko.com/en/coins/weth.com">Open in Coingecko</a>
+                    <a class="dropdown-item" href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2">Open in Explorer</a>
+                  </div>
+                </td>
+                <td>$1,791.23</td>
+                <td data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Pool Amount :$0 ETH" data-bs-placement="left">$19</td>
+                <td></td>
+                <td data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Current Weight : 50.49%" data-bs-placement="right">	50.49% / 25.00%</td>
+                <td>0.00%</td>
+                </tr>
+                <tr>
+                  <td class="dropdown" ><img src="Icons\bitcoin.png" alt="#" height="30px" width="30px"><span style="font-size: xx-large;" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" id="drop" aria-expanded="false">Bitcoin</span><span><h6 style="padding-left: 30px;">WBTC</h6></span>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" >Open in Coingecko</a>
+                      <a class="dropdown-item">Open in Explorer</a>
+                    </div></td>
+                  <td>$34,131.58</td>
+                  <td data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Pool Amount :$0 WBtC" data-bs-placement="bottom">$0</td>
+                  <td></td>
+                  <td data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Current Weight : 50.49%" data-bs-placement="bottom">	0.00% / 25.00%</td>
+                  <td>0.00%</td>
+                  </tr>
+                  <tr>
+                    <td><img src="Icons\ethereum.png" alt="#" height="30px" width="30px"><span style="font-size: xx-large;">ApeCoin</span><span><h6 style="padding-left: 30px;">APE</h6></span></td>
+                    <td>$1.30</td>
+                    <td data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Pool Amount :$0" data-bs-placement="bottom">$0</td>
+                    <td></td>
+                    <td data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Current Weight : 50.49%" data-bs-placement="bottom">	00.00% / 25.00%</td>
+                    <td>0.00%</td>
+                    </tr>
+                    <tr>
+                      <td><img src="Icons\usd.png" alt="#" height="30px" width="30px"><span style="font-size: xx-large;">USD Coin</span><span><h6 style="padding-left: 30px;">USD</h6></span></td>
+                      <td>$1,791.23</td>
+                      <td data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Pool Amount :$0" data-bs-placement="bottom">$1.00</td>
+                      <td></td>
+                      <td data-toggle="popover"  data-bs-trigger="hover" data-bs-content="Current Weight : 50.49%" data-bs-placement="bottom">	00.00% / 25.00%</td>
+                      <td>0.00%</td>
+                      </tr>
+                </tbody>
+        </table>
+
+      </div>
+       <hr style="color: aliceblue;">
+  <div class="footer" style="text-align: center; height: 50px; block-size: 0%;">
+    <img src="Icons\Romi_Finance-removebg-preview.png" height="200px" >
+  </div>
+  <div style="text-align: center; padding-top: -50px; block-size: 0%;">
+    <img src="Icons\twitter.png" alt="twitter" height="50px" href="#">
+    <img src="Icons\email.png" alt="email" height="50px" href="#" style="padding-left: 30px;">
+    <img src="Icons\github.png" alt="github" height="50px" href="#" style="padding-left: 30px;">
+    <img src="Icons\telegram.png" alt="telegram" height="50px" href="#" style="padding-left: 30px;">
+    <img src="Icons\discord.png" alt="discord" height="50px" href="#" style="padding-left: 30px;">
+  </div>
+  <div style="text-align: center;  padding-top: 20px; padding-bottom: 20px;">
+    <a style="padding-left: 30px; color: aliceblue;" href="#">Terms and conditions</a>
+    <a style="padding-left: 30px; color: aliceblue;" href="#">Referral Terms</a>
+    <a style="padding-left: 30px; color: aliceblue;" href="#" >Media Kit</a>
+
+  </div> 
+  <div id="connect" class="modal">
+    <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+    <div class="modal-header bg-dark">
+    <h3 class="modal-title bg-dark" style="color: aliceblue;">Connect Wallet</h3>
+    <button type="button"
+    class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+    <div class="modal-body bg-dark">
+      <div class="card bg-dark">
+        <div class="card-header bg-dark">
+          <img src="Icons\fox.png" alt="fox" height="50px">
+          <span style="color: aliceblue;"> MeatMask</span>
+        </div>
+        <div class="card-header bg-dark">
+          <img src="Icons\coinbaseWallet.ae86a337.png" alt="fox" height="50px">
+          <span style="color: aliceblue;"> MeatMask</span>
+        </div>
+        <div class="card-header bg-dark">
+          <img src="Icons\walletconnect-circle-blue.31c29967.png" alt="fox" height="50px">
+          <span style="color: aliceblue;"> MeatMask</span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer bg-dark">
+    <button type="button" class="btn btn-success btn-lg btn-block" href="#">save</button>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

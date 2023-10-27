@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(25, 34, 34);
+}
+.logo{
+    margin-top: 0px; 
+    margin-bottom: 0px;
+    margin-right: 17px;
+    height: 60px;
+    width: 60px;
+   
+}
+#navbar{
+    padding-left: 50px;
+}
+#navitems{
+    color: aliceblue;
+    font-size: large;
+}
+#brand{
+    color: aliceblue;
+    padding-right: 10px;
+    font-size: larger;
+}
+#wallet-button{
+    color: aliceblue;
+}
+#trade,#last{
+padding-left: 15px;
+}
+#wallet{
+    height: 26px;
+    width: 26px;
+}
+#wallet-button{
+    padding-left: 15px;
+}
+#ether,#more{
+   height: 20px;
+   width: 20px;
+}
+#myDIV {
+    width:100%;
+    border-bottom:5px solid;
+    border-bottom-width: 1px;
+  }

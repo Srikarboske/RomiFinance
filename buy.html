@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROMI</title>
+    <link rel="icon" type="image/x-icon" href="D:\PixelBridges Assignment\Icons\New Logo.png">
+    <link rel="stylesheet" href="CSSJS/css/bootstrap.min.css">
+    <script src="CSSJS/js/bootstrap.bundle.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="logo" src="Icons\New Logo.png">
+              <span id="brand" >Romi Finance</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="navbar" class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="navitems" class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="navitems" aria-current="page" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown" id="navitems" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-trigger="hover">
+                  NFT
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a id="dropdown" class="dropdown-item"  href="#">Mint</a></li>
+                  <li><a id="dropdown" class="dropdown-item"   href="#">Stake NFT</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="navitems" aria-current="page" href="earn.html">Earn</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="navitems" aria-current="page" href="buy.html">Buy</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="navitems" aria-current="page" href="referral.html">Referrals</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="navitems" aria-current="page" href="ecosystem.html">Ecosystem</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="navitems" aria-current="page" href="https://docs.zomi.finance/">About</a>
+              </li>
+              <li class="nav-item" id="trade">
+                  <button type="button" class="btn btn-success" >Trade</button>
+              </li>
+              <li  class="nav-item" id="wallet-button">
+                  <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#connect" href="#"><img id="wallet" src="Icons\wallet.png"><span style="padding-left: 15px;">Connect Wallet</span></button>
+              </li>
+             <li class="nav-item dropdown" id="last">
+             <button class="btn btn-outline-light nav-link dropdown" data-bs-toggle="dropdown">
+              <img src="Icons\ethereum.png" id="ether"> |
+              <span><img src="Icons\more.png" id="more"></span>
+             </button>
+             <ul class="dropdown-menu">
+              <li class="dropdown-header">Networks</li>
+              <a class="dropdown-item">Ether</a>
+              <div class="dropdown-divider"></div>
+        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#mymodal" href="#">Setting</a>
+        <a class="dropdown-item" href="#">Language</a>
+      </div>
+      <div id="mymodal" class="modal">
+      <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+      <h3 class="modal-title">Setting</h3>
+      <button type="button"
+      class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+          <form>
+          <div class="form-group">
+              <label for="exampleFormControlTextarea1">Allowed Slippage</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                  Display PnL after fees
+               </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                  Include PnL in leverage display
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                  Disable order validation
+              </label>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-success btn-lg btn-block" href="#">save</button>
+      </div>
+      </div>
+      </div>
+      </div>
+             </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container mt-5" style="color: aliceblue;">
+        <h1>Earn</h1>
+        <h6>Stake $ZOMI and $ZLP to earn rewards.</h6>
+        <div class="container">
+            <div class="row">
+              <div class="col-6">
+               <div class="card bg-dark">
+                <div class="card-body bg-dark">
+                  <div class="card-header bg-dark" style=" padding-left: 15px;" id="myDIV">
+                    <img src="Icons\endless-knot.png" alt="knot" height="40px">
+                    <span style="color: aliceblue; font-size: xx-large; padding-left: 20px; padding-top: 30px; ">$ROMI</span>
+                  </div>
+                  <div class="card-header bg-dark" style="padding-top: 20px; border: 0px;" >
+                  <p class="card-text" style="color: aliceblue; font-size: large;">$ZOMI is the utility and governance token. Accrues 30% of the platform's generated fees.</p>
+                </div>
+                <div  class="card-header bg-dark" style=" padding-top: 30px;" id="myDIV">
+                  <p class="card-text" style="color: aliceblue; font-size: large;">Ethereum APR: 0.00%</p>
+                </div>
+                <div class="card-footer bg-dark" >
+                  <button type="button" class="btn btn-success">Buy</button>
+                  <button type="button" class="btn btn-outline-light">Read more</button>
+        
+                </div>
+         
+                  </div>
+                </div>
+               </div>
+               <div class="col-6">
+                <div class="card bg-dark">
+                 <div class="card-body">
+                   <div class="card-header" style="padding-left: 15px;" id="myDIV">
+                     <img src="Icons\endless-knot.png" alt="knot" height="40px">
+                     <span style="color: aliceblue; font-size: xx-large; padding-left: 20px; padding-top: 30px; ">$ZPL</span>
+                   </div>
+                   <div class="card-header" style="padding-top: 20px; border: 0px;">
+                   <p class="card-text" style="color: aliceblue; font-size: large;">$ZLP is the liquidity provider token. Accrues 70% of the platform's generated fees.</p>
+                 </div>
+                 <div  class="card-header" style=" padding-top: 30px;" id="myDIV">
+                   <p class="card-text" style="color: aliceblue; font-size: large;">Ethereum APR: 1,648,281,220.84%</p>
+                 </div>
+                 <div class="card-footer">
+                   <button type="button" class="btn btn-success">Buy</button>
+                   <button type="button" class="btn btn-outline-light">Read more</button>
+               </div>
+                 </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+      </div>
+       <div class="footer" style="text-align: center; height: 50px; block-size: 0%;">
+        <hr style="color: aliceblue;">
+        <img src="Icons\Romi_Finance-removebg-preview.png" height="200px" >
+      </div>
+      <div style="text-align: center; padding-top: -50px; block-size: 0%;">
+        <img src="Icons\twitter.png" alt="twitter" height="50px" href="#">
+        <img src="Icons\email.png" alt="email" height="50px" href="#" style="padding-left: 30px;">
+        <img src="Icons\github.png" alt="github" height="50px" href="#" style="padding-left: 30px;">
+        <img src="Icons\telegram.png" alt="telegram" height="50px" href="#" style="padding-left: 30px;">
+        <img src="Icons\discord.png" alt="discord" height="50px" href="#" style="padding-left: 30px;">
+      </div>
+      <div style="text-align: center;  padding-top: 20px; padding-bottom: 20px;">
+        <a style="padding-left: 30px; color: aliceblue;" href="#">Terms and conditions</a>
+        <a style="padding-left: 30px; color: aliceblue;" href="#">Referral Terms</a>
+        <a style="padding-left: 30px; color: aliceblue;" href="#" >Media Kit</a>
+      </div>
+
+      <div id="connect" class="modal">
+        <div class="modal-dialog bg-dark">
+        <div class="modal-content">
+        <div class="modal-header bg-dark">
+        <h3 class="modal-title bg-dark" style="color: aliceblue;">Connect Wallet</h3>
+        <button type="button"
+        class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body bg-dark">
+          <div class="card bg-dark">
+            <div class="card-header bg-dark">
+              <img src="Icons\fox.png" alt="fox" height="50px">
+              <span style="color: aliceblue;"> MeatMask</span>
+            </div>
+            <div class="card-header bg-dark">
+              <img src="Icons\coinbaseWallet.ae86a337.png" alt="fox" height="50px">
+              <span style="color: aliceblue;"> MeatMask</span>
+            </div>
+            <div class="card-header bg-dark">
+              <img src="Icons\walletconnect-circle-blue.31c29967.png" alt="fox" height="50px">
+              <span style="color: aliceblue;"> MeatMask</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer bg-dark">
+        <button type="button" class="btn btn-success btn-lg btn-block" href="#">save</button>
+        </div>
+        </div>
+        </div>
+        </div>
+</body>
+</html>
